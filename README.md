@@ -1,6 +1,6 @@
 # meteor-admin-lte
 
-Incorporates the AdminLTE styles into Differential's boilerplate. 
+Incorporates the AdminLTE 2 styles into Differential's boilerplate. 
 
 ### Docs
 * [Differential Boilerplate](https://github.com/Differential/meteor-boilerplate)
