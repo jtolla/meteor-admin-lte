@@ -1,4 +1,6 @@
-# meteor-boilerplate
+# meteor-admin-lte
+
+Incorporates the AdminLTE styles into Differential's boilerplate. Differential's README follows.
 
 A starting point for MeteorJS applications. Includes iron-router, Bootstrap 3, Font Awesome, LESS and more.
 
