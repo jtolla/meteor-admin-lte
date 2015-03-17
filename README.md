@@ -10,7 +10,7 @@ Incorporates the AdminLTE styles into Differential's boilerplate.
 
 1. Clone this repo to `<yourapp>`
 
-  `git clone https://github.com/Differential/meteor-boilerplate.git <yourapp>`
+  `git clone https://github.com/jtolla/meteor-admin-lte.git <yourapp>`
 
 2. Remove `.git`
 
