@@ -2,7 +2,7 @@
 
 Incorporates the AdminLTE 2 styles into Differential's boilerplate.
 
-![Boilerplate screenshot](http://d1b12n79so5csg.cloudfront.net/admin-lte.png)
+![Boilerplate screenshot](http://d1b12n79so5csg.cloudfront.net/adminlte-screenshot.png)
 
 ### Docs
 * [Differential Boilerplate](https://github.com/Differential/meteor-boilerplate)
