@@ -19,5 +19,3 @@ Incorporates the AdminLTE 2 styles into Differential's boilerplate.
   `cd <yourapp> && rm -rf .git`
 
 3. Start coding!
-
-### More to come...
