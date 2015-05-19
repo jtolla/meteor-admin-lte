@@ -23,8 +23,8 @@ body {
 .wrapper {
   .clearfix();
   min-height: 100%;
-  position: static;
-  overflow: hidden;
+  position: relative;
+  overflow: hidden!important;
   .layout-boxed & {
     max-width: 1250px;
     margin: 0 auto;
@@ -35,20 +35,22 @@ body {
 }
 
 .layout-boxed {
-  background: url('../img/boxed-bg.jpg') repeat fixed;
+  background: url('@{boxed-layout-bg-image-path}') repeat fixed;
 }
 
 /*
- * Content Wrapper - contins main content
+ * Content Wrapper - contains the main content
  * ```.right-side has been deprecated as of v2.0.0 in favor of .content-wrapper  ```
  */
 .content-wrapper, 
 .right-side,
 .main-footer {    
-  .transition-transform(@transition-speed @transition-fn);
-  .transition(margin-left @transition-speed @transition-fn);
+  //Using disposable variable to join statements with a comma
+  @transition-rule: @transition-speed @transition-fn,
+                    margin @transition-speed @transition-fn;
+  .transition-transform(@transition-rule);
   margin-left: @sidebar-width;
-  z-index: 820;
+  z-index: 820;  
   //Top nav layout
   .layout-top-nav & {
     margin-left: 0;
@@ -80,7 +82,7 @@ body {
   background: #fff;
   padding: 15px;
   color: #444;
-  border-top: 1px solid #eee;
+  border-top: 1px solid @gray;
 }
 
 /* Fixed layout */

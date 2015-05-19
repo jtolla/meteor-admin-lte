@@ -30,7 +30,7 @@
   &.box-default {
     border-top-color: @gray;
   }
-  
+
   // collapsed mode
   &.collapsed-box {
     .box-body,
@@ -38,7 +38,7 @@
       display: none;
     }
   }
-  
+
   .nav-stacked {
     > li {
       border-bottom: 1px solid @box-border-color;
@@ -74,7 +74,7 @@
       .btn.btn-default {
         background: transparent;
       }
-      .btn, 
+      .btn,
       a {
         &:hover {
           background: rgba(0,0,0,0.1)!important;
@@ -105,7 +105,7 @@
     > .box-header > .box-tools .btn {
       border: 0;
       box-shadow: none;
-    }    
+    }
 
     // Fix font color for tiles
     &[class*='bg'] {
@@ -132,7 +132,10 @@
     font-size: 12px;
     margin-bottom: 0.3em;
   }
+}
 
+.box,
+.overlay-wrapper {
   // Box overlay for LOADING STATE effect
   > .overlay,
   > .loading-img {
@@ -144,7 +147,7 @@
   }
 
   .overlay {
-    z-index: 1010;
+    z-index: 50;
     background: rgba(255, 255, 255, 0.7);
     .border-radius(@box-border-radius);
     > .fa {
@@ -161,13 +164,17 @@
   .overlay.dark {
     background: rgba(0, 0, 0, 0.5);
   }
+}
 
+//Add clearfix to header, body and footer
+.box-header,
+.box-body,
+.box-footer {
+  .clearfix();
 }
 
 //Box header
 .box-header {
-  //Add top left and top right border radius
-  .clearfix();
   color: #444;
   display: block;
   padding: @box-padding;
@@ -239,17 +246,6 @@
   // Tables within the box body
   > .table {
     margin-bottom: 0;
-  }  
-
-  // Charts
-  > .chart {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    svg,
-    canvas {
-      width: 100%!important;
-    }
   }
 
   // Calendar within the box body
