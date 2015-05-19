@@ -1,3 +1,2 @@
 Template.dashboard.rendered = function() {
-   
 };
