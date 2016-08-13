@@ -1,0 +1,54 @@
+// # Block Grid
+//
+// Technique adapted from Foundation 5 for Bootstrap 3.0.3 to at least 3.3.1.
+// https://github.com/zurb/foundation/blob/f755d8704123f86c281ede0b171881e2672f150d/scss/foundation/components/_block-grid.scss
+//
+// # Example Usage
+//
+// To produce a grid of 2 items per row on an extra-small screen, and 3 items
+// per row on a small screen:
+//
+//     <div class="block-grid-xs-2 block-grid-sm-3">
+//         <div class="block-grid-item">
+//             ...
+//         </div>
+//     </div>
+
+[class*="block-grid-"] {
+  display: block;
+  margin: (@grid-gutter-width/2) -(@grid-gutter-width/2);
+  padding: 0;
+  .clearfix();
+}
+
+.block-grid-item {
+  display: inline;
+  margin: 0;
+  padding: (@grid-gutter-width/2);
+  height: auto;
+  float: left;
+  width: 100%;
+  list-style: none;  // for those who like to use `li` elements as block-grid-items
+}
+
+.block-grid (@per-row) {
+  & > .block-grid-item {
+    width: (100%/@per-row);
+
+    @nth-equation: ~"@{per-row}n+1";
+    &:nth-of-type(n) { clear: none; }
+    &:nth-of-type(@{nth-equation}) { clear: both; }
+  }
+}
+
+// Recursive loop that produces rules for block grids of @per-row many items
+// per row down to 1 many items per row.
+.block-grids(@size, @per-row: @grid-columns) when (@per-row > 0) {
+  .block-grid-@{size}-@{per-row} { .block-grid(@per-row); }
+  .block-grids(@size, (@per-row - 1));
+}
+
+.block-grids(xs);
+@media (min-width: @screen-sm-min) { .block-grids(sm) }
+@media (min-width: @screen-md-min) { .block-grids(md) }
+@media (min-width: @screen-lg-min) { .block-grids(lg) }
